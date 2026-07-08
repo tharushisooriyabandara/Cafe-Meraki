@@ -59,3 +59,20 @@ Cafe Meraki/
 ## Deployment
 
 Upload all files to any static hosting (Netlify, Vercel, GitHub Pages, or your web host). No build step required.
+
+### Deploy on Vercel (recommended)
+
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
+2. Click **Add New → Project**.
+3. Import **tharushisooriyabandara/Cafe-Meraki**.
+4. Leave settings as defaults (no build command, output directory is the project root).
+5. Click **Deploy**.
+
+Your site will be live at a `*.vercel.app` URL. You can add a custom domain under **Project → Settings → Domains**.
+
+**CLI (optional):**
+
+```bash
+npx vercel
+npx vercel --prod
+```
