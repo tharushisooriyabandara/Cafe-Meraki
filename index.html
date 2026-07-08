@@ -57,6 +57,10 @@
         </p>
         <div class="hero__actions reveal">
           <a href="#menu" class="btn btn--primary">Explore Menu</a>
+          <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener" class="btn btn--ubereats">
+            <img src="assets/ubereats-logo.svg" alt="" class="btn__ubereats-logo" width="88" height="16">
+            Order Now
+          </a>
           <a href="#contact" class="btn btn--outline">Contact Us</a>
         </div>
         <p class="hero__hours reveal">
@@ -145,178 +149,32 @@
             <p class="section__desc">Every dish tells a story of fresh ingredients, bold Asian flavours, and the soulful spirit of Cafe Meraki.</p>
           </div>
           <div class="menu__preview reveal">
-            <p class="menu__preview-text">Browse our live menu online — categories and dishes updated from our kitchen.</p>
-            <a href="#menu" class="btn btn--menu-cta" id="viewFullMenuBtn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
-              View Full Menu
-            </a>
+            <p class="menu__preview-text">Browse our live menu online — or order delivery straight to your door on Uber Eats.</p>
+            <div class="menu__preview-actions">
+              <a href="#menu" class="btn btn--menu-cta" id="viewFullMenuBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+                View Full Menu
+              </a>
+              <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener" class="btn btn--ubereats">
+                <img src="assets/ubereats-logo.svg" alt="" class="btn__ubereats-logo" width="88" height="16">
+                Order Now
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- Menu page: full menu -->
+        <!-- Menu page: full menu (rendered from js/menu-data.js — synced with Uber Eats) -->
         <div class="menu__full">
           <div class="menu__tabs-wrap reveal">
-            <div class="menu__tabs" role="tablist">
-              <button class="menu__tab active" role="tab" aria-selected="true" data-tab="starters">Starters</button>
-              <button class="menu__tab" role="tab" aria-selected="false" data-tab="pasta">Pasta</button>
-              <button class="menu__tab" role="tab" aria-selected="false" data-tab="rice">Rice & Noodles</button>
-              <button class="menu__tab" role="tab" aria-selected="false" data-tab="drinks">Drinks</button>
-            </div>
+            <div class="menu__tabs" id="menuTabs" role="tablist"></div>
           </div>
-
-          <div class="menu__panels">
-            <div class="menu__panel active" id="tab-starters" role="tabpanel">
-              <h3 class="menu__panel-title">Starters</h3>
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Hot Butter Cuttlefish</h4>
-                    <span class="menu-item__price">LKR 1,950</span>
-                  </div>
-                  <p class="menu-item__desc">Crispy, buttery, and aromatic.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Chicken & Egg Soup</h4>
-                    <span class="menu-item__price">LKR 650</span>
-                  </div>
-                  <p class="menu-item__desc">Comforting broth to start your meal.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Tom Yum Seafood Soup</h4>
-                    <span class="menu-item__price">LKR 900</span>
-                  </div>
-                  <p class="menu-item__desc">Thai-inspired spicy and sour broth.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Mushroom Soup</h4>
-                    <span class="menu-item__price">LKR 800</span>
-                  </div>
-                  <p class="menu-item__desc">Creamy, earthy, and warming.</p>
-                </li>
-              </ul>
-            </div>
-
-            <div class="menu__panel" id="tab-pasta" role="tabpanel" hidden>
-              <h3 class="menu__panel-title">Pasta</h3>
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Prawns with Hot & Creamy Pasta</h4>
-                    <span class="menu-item__price">LKR 1,150</span>
-                  </div>
-                  <p class="menu-item__desc">Rich creamy sauce with fresh prawns.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Chicken Pasta with Chilli Sauce</h4>
-                    <span class="menu-item__price">LKR 950</span>
-                  </div>
-                  <p class="menu-item__desc">Spicy chilli kick with tender chicken.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Seafood Pasta with Chilli Sauce</h4>
-                    <span class="menu-item__price">LKR 1,250</span>
-                  </div>
-                  <p class="menu-item__desc">Mixed seafood in a bold chilli sauce.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Mixed Pasta with Chilli Sauce</h4>
-                    <span class="menu-item__price">LKR 1,450</span>
-                  </div>
-                  <p class="menu-item__desc">The best of land and sea on one plate.</p>
-                </li>
-              </ul>
-            </div>
-
-            <div class="menu__panel" id="tab-rice" role="tabpanel" hidden>
-              <h3 class="menu__panel-title">Rice & Noodles</h3>
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Chicken Fried Rice</h4>
-                    <span class="menu-item__price">LKR 1,250</span>
-                  </div>
-                  <p class="menu-item__desc">Fragrant wok-fried rice with tender chicken — a crowd favourite.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Mongolian Rice — Chicken</h4>
-                    <span class="menu-item__price">LKR 1,450</span>
-                  </div>
-                  <p class="menu-item__desc">Sweet and savoury Mongolian-style rice.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Mixed Chop Suey Rice</h4>
-                    <span class="menu-item__price">LKR 2,400</span>
-                  </div>
-                  <p class="menu-item__desc">Loaded with vegetables and protein.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Fried Chicken Noodles</h4>
-                    <span class="menu-item__price">LKR 1,050</span>
-                  </div>
-                  <p class="menu-item__desc">Crispy chicken tossed with savoury noodles and fresh vegetables.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Devilled Chicken</h4>
-                    <span class="menu-item__price">LKR 1,550</span>
-                  </div>
-                  <p class="menu-item__desc">Bold Sri Lankan spices with a fiery, tangy kick.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Gee Set Menu</h4>
-                    <span class="menu-item__price">LKR 900</span>
-                  </div>
-                  <p class="menu-item__desc">A complete meal — rice, curry, and sides made with love.</p>
-                </li>
-              </ul>
-            </div>
-
-            <div class="menu__panel" id="tab-drinks" role="tabpanel" hidden>
-              <h3 class="menu__panel-title">Drinks</h3>
-              <ul class="menu-list">
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Artisan Coffee</h4>
-                    <span class="menu-item__price">Ask server</span>
-                  </div>
-                  <p class="menu-item__desc">Specialty brews crafted with care.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Fresh Juices</h4>
-                    <span class="menu-item__price">Ask server</span>
-                  </div>
-                  <p class="menu-item__desc">Seasonal fruit juices and blends.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Mocktails</h4>
-                    <span class="menu-item__price">Ask server</span>
-                  </div>
-                  <p class="menu-item__desc">Vibrant, refreshing non-alcoholic creations.</p>
-                </li>
-                <li class="menu-item">
-                  <div class="menu-item__head">
-                    <h4 class="menu-item__name">Soft Drinks & More</h4>
-                    <span class="menu-item__price">Ask server</span>
-                  </div>
-                  <p class="menu-item__desc">A full selection of chilled beverages.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <div class="menu__panels" id="menuPanels"></div>
 
         <div class="menu__back reveal">
+          <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener" class="btn btn--ubereats">
+            <img src="assets/ubereats-logo.svg" alt="" class="btn__ubereats-logo" width="88" height="16">
+            Order Now
+          </a>
           <a href="#home" class="btn btn--outline menu__back-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
             Back to Home
@@ -433,7 +291,7 @@
           </details>
           <details class="faq__item">
             <summary>Do you offer delivery?</summary>
-            <p>Yes! You can order from us via Uber Eats (Ovinmee Family Restaurant at the same location). Dine-in and takeaway are also available.</p>
+            <p>Yes! <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener">Order on Uber Eats</a> for delivery from Ovinmee Family Restaurant at our Gemunu Mawatha location. Dine-in and takeaway are also available.</p>
           </details>
           <details class="faq__item">
             <summary>Where can I follow Cafe Meraki online?</summary>
@@ -511,6 +369,7 @@
     </div>
   </footer>
 
+  <script src="js/menu-data.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

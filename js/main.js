@@ -7,13 +7,75 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initReveal();
   initActiveNav();
-  initMenuTabs();
+  initMenu();
   initReviewsCarousel();
   initPageViews();
 });
 
 const PAGE_IDS = new Set(['home', 'story', 'menu', 'gallery', 'reviews', 'faq', 'contact']);
-const DEFAULT_MENU_TAB = 'starters';
+const DEFAULT_MENU_TAB = 'featured';
+
+function formatMenuPrice(price) {
+  if (typeof price === 'number') {
+    return `LKR ${price.toLocaleString('en-LK')}`;
+  }
+  return price;
+}
+
+function renderMenu() {
+  const tabsEl = document.getElementById('menuTabs');
+  const panelsEl = document.getElementById('menuPanels');
+  const menuData = window.MENU_DATA;
+
+  if (!tabsEl || !panelsEl || !Array.isArray(menuData) || menuData.length === 0) {
+    return;
+  }
+
+  tabsEl.innerHTML = menuData
+    .map(
+      (category, index) => `
+        <button
+          class="menu__tab${index === 0 ? ' active' : ''}"
+          role="tab"
+          aria-selected="${index === 0}"
+          data-tab="${category.id}"
+        >${category.label}</button>`
+    )
+    .join('');
+
+  panelsEl.innerHTML = menuData
+    .map(
+      (category, index) => `
+        <div
+          class="menu__panel${index === 0 ? ' active' : ''}"
+          id="tab-${category.id}"
+          role="tabpanel"
+          ${index === 0 ? '' : 'hidden'}
+        >
+          <h3 class="menu__panel-title">${category.label}</h3>
+          <ul class="menu-list">
+            ${category.items
+              .map(
+                item => `
+              <li class="menu-item">
+                <div class="menu-item__head">
+                  <h4 class="menu-item__name">${item.name}</h4>
+                  <span class="menu-item__price">${formatMenuPrice(item.price)}</span>
+                </div>
+                ${item.desc ? `<p class="menu-item__desc">${item.desc}</p>` : ''}
+              </li>`
+              )
+              .join('')}
+          </ul>
+        </div>`
+    )
+    .join('');
+}
+
+function initMenu() {
+  renderMenu();
+  initMenuTabs();
+}
 
 /* Header scroll effect */
 function initHeader() {
