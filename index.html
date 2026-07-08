@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cafe Meraki Sri Lanka — artisan coffee, soulful cuisine & warm hospitality in Moratuwa. Where every dish is made with heart.">
+  <title>Cafe Meraki Sri Lanka | Café & Restaurant in Moratuwa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">
+        <img src="logo.jpg" alt="Cafe Meraki Sri Lanka" class="nav__logo-img" width="220" height="64">
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#home" class="nav__link" data-section="home">Home</a></li>
+        <li><a href="#story" class="nav__link" data-section="story">Our Story</a></li>
+        <li><a href="#menu" class="nav__link" data-section="menu">Menu</a></li>
+        <li><a href="#gallery" class="nav__link" data-section="gallery">Gallery</a></li>
+        <li><a href="#reviews" class="nav__link" data-section="reviews">Reviews</a></li>
+        <li><a href="#faq" class="nav__link" data-section="faq">FAQ</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta" data-section="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&q=80" alt="Cafe Meraki warm interior ambiance" loading="eager" id="heroImage">
+        <div class="hero__overlay"></div>
+        <div class="hero__vignette" aria-hidden="true"></div>
+      </div>
+      <div class="hero__content container">
+        <div class="hero__ornament reveal" aria-hidden="true"><span></span></div>
+        <p class="hero__eyebrow reveal">Moratuwa, Sri Lanka</p>
+        <h1 class="hero__title reveal">
+          Cafe Meraki
+          <span class="hero__title-accent">Sri Lanka</span>
+        </h1>
+        <p class="hero__tagline reveal">"Food with heart. Coffee with soul."</p>
+        <p class="hero__desc reveal">
+          Artisan coffee, soulful cuisine & an atmosphere that feels like home — 
+          every plate crafted with <em>meraki</em>, the love you put into what you do.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#menu" class="btn btn--primary">Explore Menu</a>
+          <a href="#contact" class="btn btn--outline">Contact Us</a>
+        </div>
+        <p class="hero__hours reveal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Open Mon – Sat · 11:00 AM – 11:00 PM
+        </p>
+      </div>
+      <a href="#highlights" class="hero__scroll" aria-label="Scroll down">
+        <span>Scroll</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights" id="highlights">
+      <div class="container highlights__grid">
+        <div class="highlight-card reveal" style="--reveal-delay: 0ms">
+          <div class="highlight-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 8h1a4 4 0 010 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          </div>
+          <h3>Artisan Coffee</h3>
+          <p>Specialty brews & beautifully crafted beverages</p>
+        </div>
+        <div class="highlight-card reveal" style="--reveal-delay: 80ms">
+          <div class="highlight-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Soulful Cuisine</h3>
+          <p>Asian flavours, pasta, rice & family favourites</p>
+        </div>
+        <div class="highlight-card reveal" style="--reveal-delay: 160ms">
+          <div class="highlight-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Gemunu Mawatha</h3>
+          <p>No. 7, Moratuwa — your neighbourhood escape</p>
+        </div>
+        <div class="highlight-card reveal" style="--reveal-delay: 240ms">
+          <div class="highlight-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>92% Recommend</h3>
+          <p>Loved by guests across Sri Lanka</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="story section" id="story">
+      <div class="container story__grid">
+        <div class="story__image reveal">
+          <img src="assets/meraki-apron-team.jpg" alt="Cafe Meraki team in Meraki aprons at our Moratuwa café" loading="lazy">
+          <div class="story__badge">
+            <span class="story__badge-number">2.9K+</span>
+            <span class="story__badge-label">Facebook Followers</span>
+          </div>
+        </div>
+        <div class="story__content reveal">
+          <span class="section__eyebrow">Our Story</span>
+          <h2 class="section__title">Where Soul<br><em>Meets the Table</em></h2>
+          <p>
+            <strong>Meraki</strong> (μεράκι) — a Greek word meaning to do something with soul, creativity, and love. 
+            That is the spirit behind every cup we pour and every plate we serve at Cafe Meraki Sri Lanka.
+          </p>
+          <p>
+            Nestled on Gemunu Mawatha in Moratuwa, we are more than a café — we are a gathering place for families, 
+            friends, and food lovers. From steaming bowls of noodles and creamy pastas to freshly brewed artisan coffee 
+            and vibrant Sri Lankan flavours, every detail is thoughtfully prepared to create moments worth savouring.
+          </p>
+          <p>
+            Whether you are stopping by for a quiet morning coffee, a lively family dinner, or celebrating a special 
+            occasion, Cafe Meraki welcomes you with warmth, flavour, and heart.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu section section--dark" id="menu">
+      <div class="container">
+        <!-- Home: menu teaser only -->
+        <div class="menu__home">
+          <div class="section__header reveal">
+            <span class="section__eyebrow">Our Menu</span>
+            <h2 class="section__title">Crafted with<br><em>Heart & Flavour</em></h2>
+            <p class="section__desc">Every dish tells a story of fresh ingredients, bold Asian flavours, and the soulful spirit of Cafe Meraki.</p>
+          </div>
+          <div class="menu__preview reveal">
+            <p class="menu__preview-text">Browse our live menu online — categories and dishes updated from our kitchen.</p>
+            <a href="#menu" class="btn btn--menu-cta" id="viewFullMenuBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+              View Full Menu
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu page: full menu -->
+        <div class="menu__full">
+          <div class="menu__tabs-wrap reveal">
+            <div class="menu__tabs" role="tablist">
+              <button class="menu__tab active" role="tab" aria-selected="true" data-tab="starters">Starters</button>
+              <button class="menu__tab" role="tab" aria-selected="false" data-tab="pasta">Pasta</button>
+              <button class="menu__tab" role="tab" aria-selected="false" data-tab="rice">Rice & Noodles</button>
+              <button class="menu__tab" role="tab" aria-selected="false" data-tab="drinks">Drinks</button>
+            </div>
+          </div>
+
+          <div class="menu__panels">
+            <div class="menu__panel active" id="tab-starters" role="tabpanel">
+              <h3 class="menu__panel-title">Starters</h3>
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Hot Butter Cuttlefish</h4>
+                    <span class="menu-item__price">LKR 1,950</span>
+                  </div>
+                  <p class="menu-item__desc">Crispy, buttery, and aromatic.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Chicken & Egg Soup</h4>
+                    <span class="menu-item__price">LKR 650</span>
+                  </div>
+                  <p class="menu-item__desc">Comforting broth to start your meal.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Tom Yum Seafood Soup</h4>
+                    <span class="menu-item__price">LKR 900</span>
+                  </div>
+                  <p class="menu-item__desc">Thai-inspired spicy and sour broth.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Mushroom Soup</h4>
+                    <span class="menu-item__price">LKR 800</span>
+                  </div>
+                  <p class="menu-item__desc">Creamy, earthy, and warming.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="menu__panel" id="tab-pasta" role="tabpanel" hidden>
+              <h3 class="menu__panel-title">Pasta</h3>
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Prawns with Hot & Creamy Pasta</h4>
+                    <span class="menu-item__price">LKR 1,150</span>
+                  </div>
+                  <p class="menu-item__desc">Rich creamy sauce with fresh prawns.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Chicken Pasta with Chilli Sauce</h4>
+                    <span class="menu-item__price">LKR 950</span>
+                  </div>
+                  <p class="menu-item__desc">Spicy chilli kick with tender chicken.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Seafood Pasta with Chilli Sauce</h4>
+                    <span class="menu-item__price">LKR 1,250</span>
+                  </div>
+                  <p class="menu-item__desc">Mixed seafood in a bold chilli sauce.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Mixed Pasta with Chilli Sauce</h4>
+                    <span class="menu-item__price">LKR 1,450</span>
+                  </div>
+                  <p class="menu-item__desc">The best of land and sea on one plate.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="menu__panel" id="tab-rice" role="tabpanel" hidden>
+              <h3 class="menu__panel-title">Rice & Noodles</h3>
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Chicken Fried Rice</h4>
+                    <span class="menu-item__price">LKR 1,250</span>
+                  </div>
+                  <p class="menu-item__desc">Fragrant wok-fried rice with tender chicken — a crowd favourite.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Mongolian Rice — Chicken</h4>
+                    <span class="menu-item__price">LKR 1,450</span>
+                  </div>
+                  <p class="menu-item__desc">Sweet and savoury Mongolian-style rice.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Mixed Chop Suey Rice</h4>
+                    <span class="menu-item__price">LKR 2,400</span>
+                  </div>
+                  <p class="menu-item__desc">Loaded with vegetables and protein.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Fried Chicken Noodles</h4>
+                    <span class="menu-item__price">LKR 1,050</span>
+                  </div>
+                  <p class="menu-item__desc">Crispy chicken tossed with savoury noodles and fresh vegetables.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Devilled Chicken</h4>
+                    <span class="menu-item__price">LKR 1,550</span>
+                  </div>
+                  <p class="menu-item__desc">Bold Sri Lankan spices with a fiery, tangy kick.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Gee Set Menu</h4>
+                    <span class="menu-item__price">LKR 900</span>
+                  </div>
+                  <p class="menu-item__desc">A complete meal — rice, curry, and sides made with love.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="menu__panel" id="tab-drinks" role="tabpanel" hidden>
+              <h3 class="menu__panel-title">Drinks</h3>
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Artisan Coffee</h4>
+                    <span class="menu-item__price">Ask server</span>
+                  </div>
+                  <p class="menu-item__desc">Specialty brews crafted with care.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Fresh Juices</h4>
+                    <span class="menu-item__price">Ask server</span>
+                  </div>
+                  <p class="menu-item__desc">Seasonal fruit juices and blends.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Mocktails</h4>
+                    <span class="menu-item__price">Ask server</span>
+                  </div>
+                  <p class="menu-item__desc">Vibrant, refreshing non-alcoholic creations.</p>
+                </li>
+                <li class="menu-item">
+                  <div class="menu-item__head">
+                    <h4 class="menu-item__name">Soft Drinks & More</h4>
+                    <span class="menu-item__price">Ask server</span>
+                  </div>
+                  <p class="menu-item__desc">A full selection of chilled beverages.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        <div class="menu__back reveal">
+          <a href="#home" class="btn btn--outline menu__back-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            Back to Home
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery section" id="gallery">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">The Experience</span>
+          <h2 class="section__title">Meraki<br><em>Moments</em></h2>
+          <p class="section__desc section__desc--home">From the first sip to the last bite — moments worth living, and sharing.</p>
+        </div>
+        <div class="gallery__grid reveal">
+          <figure class="gallery__item gallery__item--large">
+            <img src="assets/cafe-meraki-sign.jpg" alt="Cafe Meraki street sign on Gemunu Mawatha, Moratuwa" loading="lazy">
+            <figcaption>Welcome to Meraki</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Freshly prepared pizza" loading="lazy">
+            <figcaption>Fresh from the Kitchen</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=80" alt="Latte art coffee" loading="lazy">
+            <figcaption>Artisan Coffee</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80" alt="Handcrafted dessert" loading="lazy">
+            <figcaption>Sweet Endings</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Friends dining together" loading="lazy">
+            <figcaption>Feast with Friends</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews section section--cream" id="reviews">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Reviews</span>
+          <h2 class="section__title">What Our<br><em>Guests Say</em></h2>
+          <p class="section__desc section__desc--home">92% recommend Cafe Meraki — thank you for sharing the love.</p>
+        </div>
+
+        <div class="reviews__carousel reveal">
+          <button class="reviews__nav reviews__nav--prev" aria-label="Previous review">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="reviews__track" id="reviewsTrack">
+            <article class="review-card">
+              <div class="review-card__quote" aria-hidden="true">"</div>
+              <div class="review-card__stars">★★★★★</div>
+              <blockquote>"Amazing food and wonderful atmosphere. The pasta was absolutely delicious and the coffee was perfect. A hidden gem in Moratuwa — we'll definitely be back!"</blockquote>
+              <cite>— Happy Guest</cite>
+            </article>
+            <article class="review-card">
+              <div class="review-card__quote" aria-hidden="true">"</div>
+              <div class="review-card__stars">★★★★★</div>
+              <blockquote>"Great place for family dinners. The staff were friendly and attentive, and every dish was full of flavour. The fried rice and devilled chicken are must-tries."</blockquote>
+              <cite>— Local Diner</cite>
+            </article>
+            <article class="review-card">
+              <div class="review-card__quote" aria-hidden="true">"</div>
+              <div class="review-card__stars">★★★★★</div>
+              <blockquote>"Love the vibe here — cozy, welcoming, and the food never disappoints. Perfect spot for catching up with friends over coffee and a good meal."</blockquote>
+              <cite>— Café Regular</cite>
+            </article>
+            <article class="review-card">
+              <div class="review-card__quote" aria-hidden="true">"</div>
+              <div class="review-card__stars">★★★★★</div>
+              <blockquote>"Celebrated a birthday here and it was fantastic. Beautiful presentation, generous portions, and the team made us feel so special. Highly recommended!"</blockquote>
+              <cite>— Celebration Guest</cite>
+            </article>
+          </div>
+          <button class="reviews__nav reviews__nav--next" aria-label="Next review">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <p class="reviews__hint reveal">Swipe or use arrows to read more</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq">
+      <div class="container faq__grid">
+        <div class="faq__intro reveal">
+          <span class="section__eyebrow">Questions</span>
+          <h2 class="section__title">Frequently asked<br><em>questions</em></h2>
+          <p>Quick answers about location, hours, and what to expect at Cafe Meraki.</p>
+        </div>
+        <div class="faq__list reveal">
+          <details class="faq__item" open>
+            <summary>Where is Cafe Meraki located?</summary>
+            <p>Cafe Meraki is at No. 7, Gemunu Mawatha, Moratuwa, Sri Lanka — a welcoming spot in the heart of the neighbourhood.</p>
+          </details>
+          <details class="faq__item">
+            <summary>What are your opening hours?</summary>
+            <p>We are open Monday through Saturday, 11:00 AM to 11:00 PM. Hours may vary on public holidays — check our Facebook page for updates.</p>
+          </details>
+          <details class="faq__item">
+            <summary>How do I place an order or get in touch?</summary>
+            <p>WhatsApp us at <a href="https://wa.me/94777850750?text=Hello%20Cafe%20Meraki!%20I%27d%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">077 785 0750</a>, or email <a href="mailto:cafemerakisrilanka@gmail.com">cafemerakisrilanka@gmail.com</a>. Walk-ins are always welcome during opening hours.</p>
+          </details>
+          <details class="faq__item">
+            <summary>What kind of food do you serve?</summary>
+            <p>We serve a mix of Asian cuisine — fried rice, noodles, pasta, soups, cuttlefish, and more — alongside artisan coffee, fresh juices, and beverages. Something for every craving.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Do you offer delivery?</summary>
+            <p>Yes! You can order from us via Uber Eats (Ovinmee Family Restaurant at the same location). Dine-in and takeaway are also available.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Where can I follow Cafe Meraki online?</summary>
+            <p>Find us on Facebook, Instagram, and TikTok — see the icons in the footer.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#home" class="footer__logo">
+          <img src="logo.jpg" alt="Cafe Meraki Sri Lanka" class="footer__logo-img" width="200" height="58">
+        </a>
+        <p class="footer__tagline">"Food with heart. Coffee with soul."</p>
+        <p class="footer__desc">Artisan coffee & soulful cuisine on Gemunu Mawatha, Moratuwa.</p>
+      </div>
+      <div class="footer__nav">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__visit">
+        <h4>Visit Us</h4>
+        <ul class="info-list">
+          <li>
+            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            <span>No. 7, Gemunu Mawatha,<br>Moratuwa, Sri Lanka</span>
+          </li>
+          <li class="info-list__directions">
+            <a href="https://maps.app.goo.gl/7iToP1CBK7diAfov8" target="_blank" rel="noopener" class="btn btn--directions">Get Directions</a>
+          </li>
+          <li>
+            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a href="mailto:cafemerakisrilanka@gmail.com">cafemerakisrilanka@gmail.com</a>
+          </li>
+          <li>
+            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+            <a href="https://wa.me/94777850750?text=Hello%20Cafe%20Meraki!%20I%27d%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">077 785 0750</a>
+          </li>
+          <li>
+            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>Mon – Sat · 11:00 AM – 11:00 PM</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <h4>Follow Us</h4>
+        <div class="footer__social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61561861116745" target="_blank" rel="noopener" class="footer__social-icon" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/cafemeraki.srilanka/" target="_blank" rel="noopener" class="footer__social-icon" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@cafemeraki" target="_blank" rel="noopener" class="footer__social-icon" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2026 Cafe Meraki Sri Lanka. All rights reserved.</p>
+      <p>No. 7, Gemunu Mawatha · Moratuwa · Sri Lanka</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
