@@ -93,15 +93,19 @@ function initMobileNav() {
   const menu = document.getElementById('navMenu');
   const links = menu.querySelectorAll('.nav__link');
 
-  toggle.addEventListener('click', () => {
-    const isOpen = menu.classList.toggle('open');
+  const setMenuOpen = isOpen => {
+    menu.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+  };
+
+  toggle.addEventListener('click', () => {
+    setMenuOpen(!menu.classList.contains('open'));
   });
 
   links.forEach(link => {
     link.addEventListener('click', () => {
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+      setMenuOpen(false);
     });
   });
 }

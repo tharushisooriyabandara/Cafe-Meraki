@@ -455,8 +455,16 @@ ul { list-style: none; }
   border-color: var(--color-gold);
 }
 
-.nav__toggle {
+.nav__actions {
   display: none;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1002;
+}
+
+.nav__toggle {
+  display: flex;
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -474,6 +482,10 @@ ul { list-style: none; }
 }
 
 .header.scrolled .nav__toggle span { background: var(--color-cream); }
+
+body.nav-open {
+  overflow: hidden;
+}
 
 /* Hero */
 .hero {
@@ -1487,8 +1499,15 @@ body:not(.page--home) .header {
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
-@media (max-width: 768px) {
-  .nav__toggle { display: flex; }
+@media (max-width: 1024px) {
+  :root { --header-height: 72px; }
+
+  .nav__logo-img {
+    height: 48px;
+    max-width: min(180px, 52vw);
+  }
+
+  .nav__actions { display: flex; }
 
   .nav__menu {
     position: fixed;
@@ -1496,17 +1515,24 @@ body:not(.page--home) .header {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 1001;
     flex-direction: column;
+    align-items: stretch;
     background: rgba(12, 10, 8, 0.98);
     border-top: 1px solid var(--color-border);
-    padding: 2rem;
+    padding: 1.5rem 1.5rem 2rem;
     gap: 0;
+    overflow-y: auto;
     transform: translateX(100%);
-    transition: transform var(--transition);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform var(--transition), visibility var(--transition);
   }
 
   .nav__menu.open {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav__link {
@@ -1518,11 +1544,23 @@ body:not(.page--home) .header {
     text-align: center;
   }
 
-  .nav__link--cta {
-    margin-left: 0;
-    margin-top: 1rem;
+  .nav__item--contact {
+    margin-top: auto;
+    padding-top: 1.5rem;
   }
 
+  .nav__link--cta {
+    margin-left: 0;
+    margin-top: 0;
+    display: block;
+    width: 100%;
+    max-width: 220px;
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
   .highlights { margin-top: -2rem; }
   .highlights__grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
   .highlight-card { padding: 1.25rem 1rem; }
