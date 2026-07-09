@@ -212,46 +212,78 @@ function initMenu() {
   renderMenu();
 }
 
+function fitHeroBackground() {
+  const bg = document.querySelector('.hero__bg');
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroImage');
+  if (!bg) return;
+
+  const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+  const isNarrow = window.innerWidth <= 768;
+  const position = isPortrait && isNarrow ? 'center 42%' : 'center center';
+
+  bg.classList.remove('is-fit-contain');
+  [video, fallback].forEach(el => {
+    if (el) {
+      el.style.objectFit = 'cover';
+      el.style.objectPosition = position;
+    }
+  });
+}
+
 function initHeroVideo() {
   const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroImage');
   if (!video) return;
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!prefersReducedMotion) {
-    video.playbackRate = 0.55;
+  fitHeroBackground();
+  window.addEventListener('resize', fitHeroBackground, { passive: true });
+  window.addEventListener('orientationchange', fitHeroBackground, { passive: true });
+  if (fallback) {
+    fallback.addEventListener('load', fitHeroBackground);
   }
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    video.classList.add('is-failed');
+    return;
+  }
+
+  video.playbackRate = 0.55;
+  video.removeAttribute('poster');
 
   const showFallback = () => {
     video.classList.add('is-failed');
     video.classList.remove('is-playing');
   };
 
+  const markPlaying = () => {
+    video.classList.add('is-playing');
+    video.removeAttribute('poster');
+    fitHeroBackground();
+  };
+
   const tryPlay = () => {
     if (video.classList.contains('is-failed')) return;
-    video.play().catch(showFallback);
+    video.play().then(markPlaying).catch(showFallback);
   };
 
   video.addEventListener('error', showFallback);
-  video.addEventListener('playing', () => {
-    video.classList.add('is-playing');
-  });
+  video.addEventListener('playing', markPlaying);
+  video.addEventListener('loadedmetadata', fitHeroBackground);
+  video.addEventListener('canplay', tryPlay);
+  video.addEventListener('loadeddata', tryPlay);
 
-  video.addEventListener('loadeddata', () => {
-    if (!video.videoWidth || !video.videoHeight) {
-      showFallback();
-      return;
-    }
-    tryPlay();
-  });
-
-  // HEVC/H.265 often fails silently in Chrome — fall back to poster image
   window.setTimeout(() => {
-    if (!video.classList.contains('is-playing') && video.readyState < 3) {
+    if (!video.classList.contains('is-playing') && video.error) {
       showFallback();
     }
-  }, 5000);
+  }, 12000);
 
-  tryPlay();
+  if (video.readyState >= 2) {
+    tryPlay();
+  }
+
   document.addEventListener('visibilitychange', () => {
     if (!document.hidden) tryPlay();
   });
