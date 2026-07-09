@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=19">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -20,13 +20,12 @@
   <header class="header" id="header">
     <nav class="nav container">
       <a href="#home" class="nav__logo">
-        <img src="logo.jpg" alt="Cafe Meraki Sri Lanka" class="nav__logo-img" width="220" height="64">
+        <img src="assets/logo.png?v=2" alt="Cafe Meraki Sri Lanka" class="nav__logo-img" width="220" height="64">
       </a>
-      <div class="nav__actions">
-        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__backdrop" id="navBackdrop" aria-hidden="true"></div>
       <ul class="nav__menu" id="navMenu">
         <li><a href="#home" class="nav__link" data-section="home">Home</a></li>
         <li><a href="#story" class="nav__link" data-section="story">Our Story</a></li>
@@ -34,7 +33,8 @@
         <li><a href="#gallery" class="nav__link" data-section="gallery">Gallery</a></li>
         <li><a href="#reviews" class="nav__link" data-section="reviews">Reviews</a></li>
         <li><a href="#faq" class="nav__link" data-section="faq">FAQ</a></li>
-        <li class="nav__item--contact"><a href="#contact" class="nav__link nav__link--cta" data-section="contact">Contact</a></li>
+        <li><a href="#locations" class="nav__link" data-section="locations">Locations</a></li>
+        <li><a href="#contact" class="nav__link nav__link--cta" data-section="contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -43,13 +43,26 @@
     <!-- Hero -->
     <section class="hero" id="home">
       <div class="hero__bg">
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&q=80" alt="Cafe Meraki warm interior ambiance" loading="eager" id="heroImage">
+        <video
+          class="hero__video"
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="assets/logo.png?v=2"
+          aria-label="Cafe Meraki ambiance"
+        >
+          <source src="assets/hero-bg.mp4" type="video/mp4">
+        </video>
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&q=80" alt="" loading="eager" id="heroImage" class="hero__fallback" aria-hidden="true">
         <div class="hero__overlay"></div>
         <div class="hero__vignette" aria-hidden="true"></div>
       </div>
       <div class="hero__content container">
         <div class="hero__ornament reveal" aria-hidden="true"><span></span></div>
-        <p class="hero__eyebrow reveal">Moratuwa, Sri Lanka</p>
+        <p class="hero__eyebrow reveal">2 locations · Moratuwa, Sri Lanka</p>
         <h1 class="hero__title reveal">
           Cafe Meraki
           <span class="hero__title-accent">Sri Lanka</span>
@@ -61,16 +74,8 @@
         </p>
         <div class="hero__actions reveal">
           <a href="#menu" class="btn btn--primary">Explore Menu</a>
-          <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener" class="btn btn--ubereats">
-            <img src="assets/ubereats-logo.svg" alt="" class="btn__ubereats-logo" width="88" height="16">
-            Order Now
-          </a>
-          <a href="#contact" class="btn btn--outline">Contact Us</a>
         </div>
-        <p class="hero__hours reveal">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          Open Mon – Sat · 11:00 AM – 11:00 PM
-        </p>
+        <p class="hero__hours reveal">Mon – Sun · 11:00 AM – 11:00 PM at both outlets</p>
       </div>
       <a href="#highlights" class="hero__scroll" aria-label="Scroll down">
         <span>Scroll</span>
@@ -99,8 +104,8 @@
           <div class="highlight-card__icon">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <h3>Gemunu Mawatha</h3>
-          <p>No. 7, Moratuwa — your neighbourhood escape</p>
+          <h3>2 Locations</h3>
+          <p>Meraki & Ovinmee — both in Moratuwa</p>
         </div>
         <div class="highlight-card reveal" style="--reveal-delay: 240ms">
           <div class="highlight-card__icon">
@@ -130,9 +135,10 @@
             That is the spirit behind every cup we pour and every plate we serve at Cafe Meraki Sri Lanka.
           </p>
           <p>
-            Nestled on Gemunu Mawatha in Moratuwa, we are more than a café — we are a gathering place for families, 
-            friends, and food lovers. From steaming bowls of noodles and creamy pastas to freshly brewed artisan coffee 
-            and vibrant Sri Lankan flavours, every detail is thoughtfully prepared to create moments worth savouring.
+            Nestled in Moratuwa with two welcoming outlets — Meraki on New Galle Road and Cafe Meraki by Ovinmee on Gemunu Mawatha — 
+            we are more than a café. We are a gathering place for families, friends, and food lovers. From steaming bowls of noodles 
+            and creamy pastas to freshly brewed artisan coffee and vibrant Sri Lankan flavours, every detail is thoughtfully prepared 
+            to create moments worth savouring.
           </p>
           <p>
             Whether you are stopping by for a quiet morning coffee, a lively family dinner, or celebrating a special 
@@ -153,37 +159,24 @@
             <p class="section__desc">Every dish tells a story of fresh ingredients, bold Asian flavours, and the soulful spirit of Cafe Meraki.</p>
           </div>
           <div class="menu__preview reveal">
-            <p class="menu__preview-text">Browse our live menu online — or order delivery straight to your door on Uber Eats.</p>
+            <p class="menu__preview-text">Browse our full menu online. To order on Uber Eats, visit <a href="#locations">Our Locations</a>.</p>
             <div class="menu__preview-actions">
               <a href="#menu" class="btn btn--menu-cta" id="viewFullMenuBtn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
                 View Full Menu
               </a>
-              <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener" class="btn btn--ubereats">
-                <img src="assets/ubereats-logo.svg" alt="" class="btn__ubereats-logo" width="88" height="16">
-                Order Now
-              </a>
             </div>
           </div>
         </div>
 
-        <!-- Menu page: full menu (rendered from js/menu-data.js — synced with Uber Eats) -->
+        <!-- Menu page: full menu (js/menu-data.js) -->
         <div class="menu__full">
           <div class="menu__tabs-wrap reveal">
             <div class="menu__tabs" id="menuTabs" role="tablist"></div>
           </div>
           <div class="menu__panels" id="menuPanels"></div>
 
-        <div class="menu__back reveal">
-          <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener" class="btn btn--ubereats">
-            <img src="assets/ubereats-logo.svg" alt="" class="btn__ubereats-logo" width="88" height="16">
-            Order Now
-          </a>
-          <a href="#home" class="btn btn--outline menu__back-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-            Back to Home
-          </a>
-        </div>
+        <div class="menu__back reveal" id="menuBackActions"></div>
         </div>
       </div>
     </section>
@@ -234,37 +227,24 @@
           <button class="reviews__nav reviews__nav--prev" aria-label="Previous review">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
-          <div class="reviews__track" id="reviewsTrack">
-            <article class="review-card">
-              <div class="review-card__quote" aria-hidden="true">"</div>
-              <div class="review-card__stars">★★★★★</div>
-              <blockquote>"Amazing food and wonderful atmosphere. The pasta was absolutely delicious and the coffee was perfect. A hidden gem in Moratuwa — we'll definitely be back!"</blockquote>
-              <cite>— Happy Guest</cite>
-            </article>
-            <article class="review-card">
-              <div class="review-card__quote" aria-hidden="true">"</div>
-              <div class="review-card__stars">★★★★★</div>
-              <blockquote>"Great place for family dinners. The staff were friendly and attentive, and every dish was full of flavour. The fried rice and devilled chicken are must-tries."</blockquote>
-              <cite>— Local Diner</cite>
-            </article>
-            <article class="review-card">
-              <div class="review-card__quote" aria-hidden="true">"</div>
-              <div class="review-card__stars">★★★★★</div>
-              <blockquote>"Love the vibe here — cozy, welcoming, and the food never disappoints. Perfect spot for catching up with friends over coffee and a good meal."</blockquote>
-              <cite>— Café Regular</cite>
-            </article>
-            <article class="review-card">
-              <div class="review-card__quote" aria-hidden="true">"</div>
-              <div class="review-card__stars">★★★★★</div>
-              <blockquote>"Celebrated a birthday here and it was fantastic. Beautiful presentation, generous portions, and the team made us feel so special. Highly recommended!"</blockquote>
-              <cite>— Celebration Guest</cite>
-            </article>
-          </div>
+          <div class="reviews__track" id="reviewsTrack"></div>
           <button class="reviews__nav reviews__nav--next" aria-label="Next review">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
         <p class="reviews__hint reveal">Swipe or use arrows to read more</p>
+      </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="locations section section--cream" id="locations">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Find Us</span>
+          <h2 class="section__title">Our<br><em>Locations</em></h2>
+          <p class="section__desc section__desc--home">Two Moratuwa outlets — café coffee at Meraki, hearty Asian cuisine at Ovinmee. Each with its own menu and contact details.</p>
+        </div>
+        <div class="locations__grid" id="locationsGrid"></div>
       </div>
     </section>
 
@@ -276,32 +256,7 @@
           <h2 class="section__title">Frequently asked<br><em>questions</em></h2>
           <p>Quick answers about location, hours, and what to expect at Cafe Meraki.</p>
         </div>
-        <div class="faq__list reveal">
-          <details class="faq__item" open>
-            <summary>Where is Cafe Meraki located?</summary>
-            <p>Cafe Meraki is at No. 7, Gemunu Mawatha, Moratuwa, Sri Lanka — a welcoming spot in the heart of the neighbourhood.</p>
-          </details>
-          <details class="faq__item">
-            <summary>What are your opening hours?</summary>
-            <p>We are open Monday through Saturday, 11:00 AM to 11:00 PM. Hours may vary on public holidays — check our Facebook page for updates.</p>
-          </details>
-          <details class="faq__item">
-            <summary>How do I place an order or get in touch?</summary>
-            <p>WhatsApp us at <a href="https://wa.me/94777850750?text=Hello%20Cafe%20Meraki!%20I%27d%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">077 785 0750</a>, or email <a href="mailto:cafemerakisrilanka@gmail.com">cafemerakisrilanka@gmail.com</a>. Walk-ins are always welcome during opening hours.</p>
-          </details>
-          <details class="faq__item">
-            <summary>What kind of food do you serve?</summary>
-            <p>We serve a mix of Asian cuisine — fried rice, noodles, pasta, soups, cuttlefish, and more — alongside artisan coffee, fresh juices, and beverages. Something for every craving.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Do you offer delivery?</summary>
-            <p>Yes! <a href="https://www.ubereats.com/lk/store/ovinmee-family-restaurant/Qn3twleGQWWvmjZWvfPHmA?diningMode=DELIVERY&ps=1&surfaceName=" target="_blank" rel="noopener">Order on Uber Eats</a> for delivery from Ovinmee Family Restaurant at our Gemunu Mawatha location. Dine-in and takeaway are also available.</p>
-          </details>
-          <details class="faq__item">
-            <summary>Where can I follow Cafe Meraki online?</summary>
-            <p>Find us on Facebook, Instagram, and TikTok — see the icons in the footer.</p>
-          </details>
-        </div>
+        <div class="faq__list reveal" id="faqList"></div>
       </div>
     </section>
   </main>
@@ -311,10 +266,10 @@
     <div class="container footer__grid">
       <div class="footer__brand">
         <a href="#home" class="footer__logo">
-          <img src="logo.jpg" alt="Cafe Meraki Sri Lanka" class="footer__logo-img" width="200" height="58">
+          <img src="assets/logo.png?v=2" alt="Cafe Meraki Sri Lanka" class="footer__logo-img" width="200" height="58">
         </a>
         <p class="footer__tagline">"Food with heart. Coffee with soul."</p>
-        <p class="footer__desc">Artisan coffee & soulful cuisine on Gemunu Mawatha, Moratuwa.</p>
+        <p class="footer__desc">Two Moratuwa outlets — artisan coffee & soulful cuisine, made with meraki.</p>
       </div>
       <div class="footer__nav">
         <h4>Navigate</h4>
@@ -325,32 +280,13 @@
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="#locations">Locations</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer__visit">
-        <h4>Visit Us</h4>
-        <ul class="info-list">
-          <li>
-            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-            <span>No. 7, Gemunu Mawatha,<br>Moratuwa, Sri Lanka</span>
-          </li>
-          <li class="info-list__directions">
-            <a href="https://maps.app.goo.gl/7iToP1CBK7diAfov8" target="_blank" rel="noopener" class="btn btn--directions">Get Directions</a>
-          </li>
-          <li>
-            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <a href="mailto:cafemerakisrilanka@gmail.com">cafemerakisrilanka@gmail.com</a>
-          </li>
-          <li>
-            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
-            <a href="https://wa.me/94777850750?text=Hello%20Cafe%20Meraki!%20I%27d%20like%20to%20get%20in%20touch." target="_blank" rel="noopener">077 785 0750</a>
-          </li>
-          <li>
-            <svg class="info-list__icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <span>Mon – Sat · 11:00 AM – 11:00 PM</span>
-          </li>
-        </ul>
+        <h4>Our Locations</h4>
+        <div class="footer__outlets" id="footerOutlets"></div>
       </div>
       <div class="footer__social">
         <h4>Follow Us</h4>
@@ -369,11 +305,13 @@
     </div>
     <div class="footer__bottom container">
       <p>&copy; 2026 Cafe Meraki Sri Lanka. All rights reserved.</p>
-      <p>No. 7, Gemunu Mawatha · Moratuwa · Sri Lanka</p>
+      <p>Meraki – Moratuwa · New Galle Road &nbsp;|&nbsp; Cafe Meraki by Ovinmee · Gemunu Mawatha</p>
     </div>
   </footer>
 
-  <script src="js/menu-data.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/outlets-data.js?v=14"></script>
+  <script src="js/menu-data.js?v=11"></script>
+  <script src="js/site-data.js?v=11"></script>
+  <script src="js/main.js?v=22"></script>
 </body>
 </html>
